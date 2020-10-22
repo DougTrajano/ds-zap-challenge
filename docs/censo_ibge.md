@@ -30,7 +30,6 @@ censo_config = {
         "V014": "renda_nom_dom_sem_rendimento"
     },
     "Entorno01_SP1.csv": {
-        "V1005": "rural_urbano",
         "V002": "ident_logradouro_proprios",
         "V003": "nao_ident_logradouro_proprios",
         "V004": "ident_logradouro_alugados",

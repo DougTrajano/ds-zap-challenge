@@ -1,7 +1,8 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, Field
 from typing import Optional
 
 class Imovel(BaseModel):
+    id: str = Field(..., alias='_id')
     usableAreas: Optional[int]
     parkingSpaces: Optional[int]
     suites: Optional[int]

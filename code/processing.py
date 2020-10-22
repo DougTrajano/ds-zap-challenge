@@ -29,46 +29,53 @@ def processing(raw, converted_features=None, ibge_paths=None, shapefile_path=Non
     """
     
     processed = []
-
+    
+    # geolocation cols
+    lat_n = "address_geoLocation_location_lat"
+    lon_n = "address_geoLocation_location_lon"
+    
     # inst ibge class
     if isinstance(ibge_paths, dict) and isinstance(censo_config, dict) and isinstance(shapefile_path, str):
-        censo = CensoData(ibge_paths, shapefile_path)
-
+        censo = CensoData(ibge_paths, censo_config, shapefile_path)
+    else:
+        censo = None
+        
     with tqdm(total=len(raw)) as pbar:
         pbar.set_description("Processing")
         for item in raw:
+
             # Add geohashes and point
-            if item.get("address_geoLocation_location_lat") != None and item.get("address_geoLocation_location_lon") != None:
-                item["geohash"] = get_geohash(lat=item.get("address_geoLocation_location_lat"),
-                                            lon=item.get("address_geoLocation_location_lon"),
+            if item.get(lat_n) != None and item.get(lon_n) != None and item.get(lat_n) != 0.0 and item.get(lon_n) != 0.0:
+                item["geohash"] = get_geohash(lat=item.get(lat_n),
+                                            lon=item.get(lon_n),
                                             delimiter=7)
-                
-                item["geopoint"] = Point(item.get("address_geoLocation_location_lon"),
-                                        item.get("address_geoLocation_location_lat"))
-                
+
+                item["geopoint"] = Point(item.get(lon_n),
+                                        item.get(lat_n))
+
+                # Add IBGE Censo 2010
+                if censo != None:
+                    item["census_code"] = censo.get_censo_code(item["geopoint"])
+                    censo_features = censo.get_censo_features(item["census_code"])
+                    item = {**item, **censo_features}
+
             # Add images_qty
             item["image_qty"] = get_images_qty(item)
-            
+
             # Features from description
             if isinstance(item.get("description"), str):
                 features_desc = t = DescriptionFeatures(item["description"]).get_features()
                 item = {**item, **features_desc}
-                
-            # Add IBGE Censo 2010
-            if isinstance(ibge_paths, dict) and isinstance(censo_config, dict) and isinstance(shapefile_path, str):
-                item["census_code"] = censo.get_censo_code(item["geopoint"])
-                censo_features = censo.get_censo_features(item["census_code"], censo_config)
-                item = {**item, **censo_features}
-            
+
             # Converting features names
             if isinstance(converted_features, dict):
                 for key in converted_features.keys():
                     if item.get(key) != None:
                         item[converted_features[key]] = item[key]
-                    
+            
             new_item = Imovel(**item)
             
-            processed.append(new_item.dict())
+            processed.append(new_item.dict())                
             pbar.update(1)
         
     return processed
