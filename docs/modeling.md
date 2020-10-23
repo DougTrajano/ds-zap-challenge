@@ -52,7 +52,7 @@ Dados faltantes
 
 ### Split
 
-O conjunto de dados foi dividido em **train/val** com uma proporção de 0.8 e 0.2 respectivamente.
+O conjunto de dados foi dividido em **train/val** com uma proporção de 0.67 e 0.33 respectivamente.
 
 ### Stratify
 
