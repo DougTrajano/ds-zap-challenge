@@ -139,8 +139,6 @@ O **MSE** serve apenas para otimização do algoritmo, mas analisando o **R²** 
 
 O resultado do **cross-validation** foi:
 
-PENDENTE
-
 | Fold | Score |
 | - | - |
 | 1 | 0.9221 |
