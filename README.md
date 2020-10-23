@@ -43,4 +43,4 @@ Para explicar melhor a estratégia e os processos utilizados, existe uma pasta n
 
 ## Resultados
 
-Os resultados e as respostas das perguntas solicitadas estão no arquivo [docs/reports.md](docs[reports.md])
+Os resultados e as respostas das perguntas solicitadas estão no arquivo [docs/reports.md](docs/reports.md)
