@@ -34,7 +34,10 @@ class CensoData:
     
     def get_censo_code(self, coordinate_point):
         df = pd.DataFrame({"coordinate_point": [coordinate_point]})
-        df['census_code'] = df['coordinate_point'].map(lambda x: self.shapefile.loc[self.shapefile.contains(x), 'CD_GEOCODI'].values).str[0].astype('int64')
+        try:
+            df['census_code'] = df['coordinate_point'].map(lambda x: self.shapefile.loc[self.shapefile.contains(x), 'CD_GEOCODI'].values).str[0].astype('int64')
+        except:
+            return None
         return df["census_code"].values[0]
 
     def load_csv(self, path):
