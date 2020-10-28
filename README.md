@@ -19,6 +19,16 @@ Este projeto foi desenvolvido no AWS SageMaker utilizando uma **ml.m5.2xlarge**.
 pip install -r requirements.txt
 ```
 
+## App
+
+Existe uma aplicação interativa que pode ser executada através do comando abaixo na raíz do projeto.
+
+```
+streamlit run code/app.py
+```
+
+A aplicação web fornecerá uma forma interativa de visualizar os resultados e uma apresentação do projeto.
+
 ## Problema de negócio
 
 Criar uma maneira automática de estimar um preço de venda para os apartamentos no dataset.

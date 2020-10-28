@@ -10,3 +10,4 @@ numpy==1.18.1
 pandas-profiling==2.9.0
 xgboost==1.2.1
 scikit-learn==0.22.1
+streamlit==0.69.2
