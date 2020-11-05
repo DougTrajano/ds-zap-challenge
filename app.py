@@ -99,13 +99,13 @@ def main_page():
 
 
 def modeling_page():
-    with open('../docs/modeling.md') as md_file:
+    with open('docs/modeling.md') as md_file:
         data = md_file.read()
     st.write(data)
 
 
 def features_page():
-    with open('../docs/features_selection.md') as md_file:
+    with open('docs/features_selection.md') as md_file:
         data = md_file.read()
     st.write(data)
     st.write("## Localizações dos imóveis")
@@ -114,7 +114,7 @@ def features_page():
 
 
 def reports_page():
-    with open('../docs/reports.md') as md_file:
+    with open('docs/reports.md') as md_file:
         data = md_file.read()
     st.write(data)
 
