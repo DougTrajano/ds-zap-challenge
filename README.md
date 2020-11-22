@@ -2,16 +2,14 @@
 
 Autor: [Douglas Trajano](https://dougtrajano.github.io/resume/)
 
-Este projeto faz parte do [Data Science Challenge](https://grupozap.github.io/cultura/challenges/data-science.html) realizado no processo seletivo para cientista de dados no Grupo ZAP.
+Este projeto faz parte do [Data Science Challenge](https://grupozap.github.io/cultura/challenges/data-science.html) do Grupo ZAP.
 
 ## Setup & Instalação
 
-O projeto necessita de uma máquina com +- 20GB de memória.
+Este projeto foi desenvolvido no AWS SageMaker utilizando uma **ml.t3.xlarge**.
 
-Este projeto foi desenvolvido no AWS SageMaker utilizando uma **ml.m5.2xlarge**.
-
-- **vCPU:** `8`
-- **Memory:** `32GIB`
+- **vCPU:** `4`
+- **Memory:** `16GIB`
 
 É necessário instalar os pacotes que estão listados no **requirements.txt**.
 
@@ -21,13 +19,17 @@ pip install -r requirements.txt
 
 ## App
 
-Existe uma aplicação interativa que pode ser executada através do comando abaixo na raíz do projeto.
+Desenvolvemos uma aplicação interativa que permite apresentar melhor o projeto.
+
+Você pode executar localmente após clonar o repositório com o comando abaixo:
 
 ```
-streamlit run code/app.py
+streamlit run app.py
 ```
 
-A aplicação web fornecerá uma forma interativa de visualizar os resultados e uma apresentação do projeto.
+Ou acessar o link abaixo:
+
+https://share.streamlit.io/dougtrajano/ds-zap-challenge/main/app.py
 
 ## Problema de negócio
 
@@ -49,8 +51,8 @@ O projeto foi divido em 3 partes.
 
 A estratégia utilizada aqui foi realizar uma criteriosa seleção de features dos datasets (treino e teste), também foram coletadas features do dados geográficos fornecidos pelo Censo IBGE 2010.
 
-Para explicar melhor a estratégia e os processos utilizados, existe uma pasta na raiz do repositório chamada [docs](docs) com mais informações sobre as *features* utilizadas, modelos, etc.
+Para explicar melhor a estratégia e os processos utilizados, acesse o app.
 
 ## Resultados
 
-Os resultados e as respostas das perguntas solicitadas estão no arquivo [docs/reports.md](docs/reports.md)
+Os resultados e as respostas das perguntas solicitadas estão na página "Reports" do app.
