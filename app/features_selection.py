@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
 
+
 def features_page():
     st.title("Features selection")
 
     st.markdown("""
     Arquivos:
 
-    - code/processing.py
-    - code/processing.ipynb
-    - code/censo_ibge.py
+    - [code/processing.py](https://github.com/DougTrajano/ds-zap-challenge/blob/main/code/processing.py)
+    - [code/processing.ipynb](https://github.com/DougTrajano/ds-zap-challenge/blob/main/code/processing.ipynb)
+    - [code/censo_ibge.py](https://github.com/DougTrajano/ds-zap-challenge/blob/main/code/censo_ibge.py)
 
     ---
 
@@ -17,7 +18,7 @@ def features_page():
 
     Utilizamos features geradas pelos datasets fornecidos pelo Grupo ZAP e features fornecidas pelo Censo IBGE 2010.
 
-    O modelo de dados pode ser verificado em [code/data_models.py](code/data_models.py)
+    O modelo de dados pode ser verificado em [code/data_models.py](https://github.com/DougTrajano/ds-zap-challenge/blob/main/code/data_models.py)
 
     ---
 
@@ -27,7 +28,7 @@ def features_page():
 
     Os dados do IBGE são fornecidos em CSV ou EXCEL e possuem uma documentação para informar o conceito de cada variável disponível que normalmente seguem o padrão `V001`, `V002`, `etc.`.
 
-    Para o cruzamos da base foi criada uma classe chamada `CensoData()` que está disponível no arquivo **code/censo_ibge.py**.
+    Para o cruzamos da base foi criada uma classe chamada `CensoData()` que está disponível no arquivo [code/censo_ibge.py](https://github.com/DougTrajano/ds-zap-challenge/blob/main/code/censo_ibge.py).
 
     Na função `get_censo_features()` é necessário informar um `census_code` (Cod_setor) e o arquivo censo_config que mapeia quais arquivos serão analisados e quais nomes as variáveis serão convertidas.
 
@@ -39,33 +40,33 @@ def features_page():
 
     | Variável IBGE | Nome da feature gerada   |
     |------|----------------------------------|
-    | V001 | total\_dom\_part\_improvisados |
-    | V002 | renda\_nom\_dom\_part            |
-    | V003 | renda\_nom\_dom\_part\_perm      |
-    | V004 | renda\_nom\_dom\_part\_imp       |
-    | V005 | renda\_nom\_dom\_sal\_baixo1     |
-    | V006 | renda\_nom\_dom\_sal\_baixo2     |
-    | V007 | renda\_nom\_dom\_sal\_baixo3     |
-    | V008 | renda\_nom\_dom\_sal\_baixo4     |
-    | V009 | renda\_nom\_dom\_sal\_medio1     |
-    | V010 | renda\_nom\_dom\_sal\_medio2     |
-    | V011 | renda\_nom\_dom\_sal\_medio3     |
-    | V012 | renda\_nom\_dom\_sal\_alto1      |
-    | V013 | renda\_nom\_dom\_sal\_alto2      |
-    | V014 | renda\_nom\_dom\_sem\_rendimento |
+    | V001 | total_dom_part_improvisados  |
+    | V002 | renda_nom_dom_part           |
+    | V003 | renda_nom_dom_part_perm      |
+    | V004 | renda_nom_dom_part_imp       |
+    | V005 | renda_nom_dom_sal_baixo1     |
+    | V006 | renda_nom_dom_sal_baixo2     |
+    | V007 | renda_nom_dom_sal_baixo3     |
+    | V008 | renda_nom_dom_sal_baixo4     |
+    | V009 | renda_nom_dom_sal_medio1     |
+    | V010 | renda_nom_dom_sal_medio2     |
+    | V011 | renda_nom_dom_sal_medio3     |
+    | V012 | renda_nom_dom_sal_alto1      |
+    | V013 | renda_nom_dom_sal_alto2      |
+    | V014 | renda_nom_dom_sem_rendimento |
 
     ### Entorno01_SP1.csv
 
-    | Variável IBGE | Nome da feature gerada      |
+    | Variável IBGE | Nome da feature gerada |
     |------|----------------------------------|
-    | V002 | ident\_logradouro\_proprios |
-    | V003 | nao\_ident\_logradouro\_proprios |
-    | V004 | ident\_logradouro\_alugados      |
-    | V005 | nao\_ident\_logradouro\_alugados |
-    | V008 | ilum\_publica\_proprios          |
-    | V009 | nao\_ilum\_publica\_proprios     |
-    | V010 | ilum\_publica\_alugados          |
-    | V011 | nao\_ilum\_publica\_alugados     |
+    | V002 | ident_logradouro_proprios |
+    | V003 | nao_ident_logradouro_proprios |
+    | V004 | ident_logradouro_alugados |
+    | V005 | nao_ident_logradouro_alugados |
+    | V008 | ilum_publica_proprios |
+    | V009 | nao_ilum_publica_proprios |
+    | V010 | ilum_publica_alugados |
+    | V011 | nao_ilum_publica_alugados |
 
     ### Exemplo
 
@@ -73,8 +74,9 @@ def features_page():
 
     Temos as seguintes features:
 
-    ```
-    {
+    """)
+
+    st.json({
         "total_dom_part_improvisados": "0",
         "renda_nom_dom_part": "3102115",
         "renda_nom_dom_part_perm": "3102115",
@@ -97,9 +99,9 @@ def features_page():
         "nao_ilum_publica_proprios": "0",
         "ilum_publica_alugados": "79",
         "nao_ilum_publica_alugados": "0"
-    }
-    ```
+    })
 
+    st.markdown("""
     ---
 
     ## Description
