@@ -1,6 +1,6 @@
 import streamlit as st
 
-def home_page():
+def home_page(state):
     st.title("Phil, o avaliador de imóveis :house: ")
     st.write("""
     O Phil é um modelo de machine learning que avalia todos os dias milhares de imóveis e fornece recomendações de preços, seja para venda ou aluguel, não é incrível?
@@ -17,3 +17,5 @@ def home_page():
 
     ![](https://media2.giphy.com/media/wFOC9RazP97i0/giphy.gif)
     """)
+
+    state.sync()

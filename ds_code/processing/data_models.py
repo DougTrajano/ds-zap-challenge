@@ -1,0 +1,53 @@
+from pydantic import BaseModel, Field
+from typing import Optional
+
+class Imovel(BaseModel):
+    id: str = Field(..., alias='_id')
+    usableAreas: Optional[int]
+    parkingSpaces: Optional[int]
+    suites: Optional[int]
+    bathrooms: Optional[int]
+    totalAreas: Optional[int]
+    bedrooms: Optional[int]
+    publicationType: Optional[str]
+    geohash: Optional[str]
+    price: Optional[int]
+    businessType: Optional[str]
+    yearlyIptu: Optional[int]
+    monthlyCondoFee: Optional[int]
+    has_gym: bool
+    has_garden: bool
+    has_pool: bool
+    has_lobby: bool
+    has_partyRoom: bool
+    has_balcony: bool
+    has_playground: bool
+    has_grill: bool
+    has_games: bool
+    has_closet: bool
+    has_elevator: bool
+    has_furnitures: bool
+    has_toilet: bool
+    total_dom_part_improvisados: Optional[int]
+    renda_nom_dom_part: Optional[int]
+    renda_nom_dom_part_perm: Optional[int]
+    renda_nom_dom_part_imp: Optional[int]
+    renda_nom_dom_sal_baixo1: Optional[int]
+    renda_nom_dom_sal_baixo2: Optional[int]
+    renda_nom_dom_sal_baixo3: Optional[int]
+    renda_nom_dom_sal_baixo4: Optional[int]
+    renda_nom_dom_sal_medio1: Optional[int]
+    renda_nom_dom_sal_medio2: Optional[int]
+    renda_nom_dom_sal_medio3: Optional[int]
+    renda_nom_dom_sal_alto1: Optional[int]
+    renda_nom_dom_sal_alto2: Optional[int]
+    renda_nom_dom_sem_rendimento: Optional[int]
+    rural_urbano: Optional[int]
+    ident_logradouro_proprios: Optional[int]
+    nao_ident_logradouro_proprios: Optional[int]
+    ident_logradouro_alugados: Optional[int]
+    nao_ident_logradouro_alugados: Optional[int]
+    ilum_publica_proprios: Optional[int]
+    nao_ilum_publica_proprios: Optional[int]
+    ilum_publica_alugados: Optional[int]
+    nao_ilum_publica_alugados: Optional[int]

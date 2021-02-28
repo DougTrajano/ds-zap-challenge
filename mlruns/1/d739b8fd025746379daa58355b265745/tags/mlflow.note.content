@@ -1,0 +1,5 @@
+First experiment tracked using MLflow.
+
+# Todo list
+
+- Fix `artifact_location` for the next experiments. I needed to fix it manually.

@@ -1,21 +1,36 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 
 from app.multi_app import MultiApp
-from app.home import *
-from app.features_selection import *
-from app.modeling import *
-from app.reports import *
+from app.docs import api_page, app_page, model_page, report_page
+from app.home import home_page
 
-st.set_page_config(page_title="Phil, o avaliador de imóveis",
-                        page_icon="https://assets.zap.com.br/assets/v5.71.0/32x32.png")
+from ds_code.processing.helper_functions import read_json
+
+# Import pages
+
+#from features_selection import *
+#from modeling import *
+#from reports import *
+
+params = read_json("properties/application.json")
+
+st.set_page_config(page_title=params["streamlit"]["title"],
+                   layout=params["streamlit"]["layout"])
 
 app = MultiApp()
 
 app.add_app("Home", home_page)
-app.add_app("Features selection", features_page)
-app.add_app("Modeling", modeling_page)
-app.add_app("Reports", reports_page)
 
-app.run()
+# Docs
+app.add_app("Docs - API", api_page)
+app.add_app("Docs - Data App", app_page)
+app.add_app("Docs - ML model", model_page)
+app.add_app("Docs - Report", report_page)
+
+
+#app.add_app("Features selection", features_page)
+#app.add_app("Modeling", modeling_page)
+#app.add_app("Reports", reports_page)
+
+app.run(title=params["streamlit"]["title"],
+        disable_menu=params["streamlit"]["disable_menu"])

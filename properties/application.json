@@ -1,0 +1,17 @@
+{
+    "mlflow": {
+        "uri": "file:///home/douglas-trajano/Documents/Doug/GitHub/ds-zap-challenge",
+        "experiment": "ds-zap-challenge"
+    },
+    "fastapi": {
+        "title": "ds-zap-challenge",
+        "description": "An API to predict apartments sales price from a machine learning model.",
+        "version": "1.0.0",
+        "model_path": "mlruns/1/d739b8fd025746379daa58355b265745/artifacts/model"
+    },
+    "streamlit": {
+        "title": "ds-zap-challenge",
+        "layout": "wide",
+        "disable_menu": true
+    }
+}
