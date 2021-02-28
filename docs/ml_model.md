@@ -49,7 +49,7 @@ The last model (a XGBoost Regressor) was trained on **February 27 | 2021**.
 
 [MLflow](https://www.mlflow.org/) is an open source platform for the machine learning lifecycle.
 
-![](images/mlflow_detailed.png)
+![](https://raw.githubusercontent.com/DougTrajano/ds-zap-challenge/main/docs/images/mlflow_detailed.png)
 
 ### Tracking experiments
 
