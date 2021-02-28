@@ -2,7 +2,7 @@
 
 We have a data app available for this project.
 
-This was created with [Streamlit](https://www.streamlit.io/). The fastest way to build and share data apps.
+This app was created with [Streamlit](https://www.streamlit.io/). The fastest way to build and share data apps.
 
 ![](images/streamlit.png)
 
@@ -28,6 +28,6 @@ pip install -r requirements.txt
 streamlit run app/main.py
 ```
 
-Open one of URLs printed on console by Streamlit.
+### Open one of URLs printed on console by Streamlit.
 
 ![](images/streamlit_urls.png)

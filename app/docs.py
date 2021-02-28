@@ -2,9 +2,9 @@ import streamlit as st
 
 def api_page(state):
     st.title("API - [FastAPI](https://fastapi.tiangolo.com/)")
-    st.markdown("""
-    The model is served with an API powered by [FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
-    """)
+    st.write("The ML model can be served with an API (powered by [FastAPI](https://fastapi.tiangolo.com/)).")
+    st.write("[FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.")
+
     st.image("docs/images/fastapi.png", width=400)
     
     st.header("API docs")
@@ -64,13 +64,12 @@ def model_page(state):
     st.write("The last model (a XGBoost Regressor) was trained on **February 27 | 2021**.")
 
     st.header("Scores")
-    st.markdown("""
-    | Metric | Score |
-    | - | - |
-    | R2 Score (cross-validation)| 0.8253 |
-    | R2 Score (test set) | 0.8464 |
-    """)
 
+    st.markdown("""
+    - **R2 (cross-validation):** 0.8253
+    - **R2 (test set):** 0.8464
+    """)
+    
     st.header("Hyperparameters")
     st.markdown("""
     | Hyperparameter | Value |
@@ -118,8 +117,4 @@ def model_page(state):
     st.write("You can see all experiments in MLflow Tracking UI, just type this command in the terminal of the project directory.")
     st.code("mlflow ui")
 
-    state.sync()
-
-def report_page(state):
-    st.write("Pending")
     state.sync()

@@ -4,10 +4,21 @@ The last model (a XGBoost Regressor) was trained on **February 27 | 2021**.
 
 ## Scores
 
-| Metric | Score |
+### Base model
+
+| Name | Value |
 | - | - |
-| R2 Score (cross-validation)| 0.8253 |
-| R2 Score (test set) | 0.8464 |
+| MSE | 176603598239.7 |
+| R2 score (test set) | 0.814 |
+
+
+### Optimized model
+
+| Name | Value |
+| - | - |
+| MSE | 145975917532 |
+| R2 score (test set) | 0.8464 |
+| R2 score (cross-validation) | 0.8253 |
 
 ---
 

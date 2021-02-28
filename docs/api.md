@@ -1,6 +1,8 @@
 # API - [FastAPI](https://fastapi.tiangolo.com/)
 
-The model is served with an API powered by [FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+The ML model can be served with an API (powered by [FastAPI](https://fastapi.tiangolo.com/)).
+
+[FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 
 ![](images/fastapi.png)
 

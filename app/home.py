@@ -1,21 +1,23 @@
 import streamlit as st
 
 def home_page(state):
-    st.title("Phil, o avaliador de imóveis :house: ")
+    st.title(":house: Phil, virtual realtor")
+
+    st.warning("""
+    This project shouldn't be used in production environment or for decision making without validating its results.
+    
+    This project has no support lifecycle and has only learning purposes.""")
+
+    st.subheader("Who is Phil?")
+    st.write("Phil is a machine learning model that predicts sales prices for apartments advertised on our webiste.")
+
+    st.subheader("How does he do that?")
     st.write("""
-    O Phil é um modelo de machine learning que avalia todos os dias milhares de imóveis e fornece recomendações de preços, seja para venda ou aluguel, não é incrível?
-
-    Ele é capaz de interpretar e combinar várias informações dos imóveis como **quantidade de quartos, piscina, área útil, etc.**
-    
-    Também consegue relacionar tudo isso com informações do bairro que são fornecedias pelo IBGE como **renda média da região, indicadores de iluminação pública, etc.**
-
-    
+    Phil analyzes a lot of information about the ads and combines this with geographic data, for example, neighborhood average income, street lighting indicators, etc.
     """)
 
-    st.write("""
-    Se quiser vender seu imóvel, ligue para o Phil!
-
-    ![](https://media2.giphy.com/media/wFOC9RazP97i0/giphy.gif)
-    """)
+    st.subheader("Phil Dunphy")
+    st.write("For all your Real Estate needs.")
+    st.markdown("![](https://media2.giphy.com/media/wFOC9RazP97i0/giphy.gif)")
 
     state.sync()

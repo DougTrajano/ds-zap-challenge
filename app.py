@@ -1,7 +1,8 @@
 import streamlit as st
 
 from app.multi_app import MultiApp
-from app.docs import api_page, app_page, model_page, report_page
+from app.docs import api_page, app_page, model_page
+from app.report import report_page
 from app.home import home_page
 
 from ds_code.processing.helper_functions import read_json
