@@ -5,7 +5,7 @@ def api_page(state):
     st.markdown("""
     The model is served with an API powered by [FastAPI](https://fastapi.tiangolo.com/) is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
     """)
-    st.image("docs/images/fastapi.png", use_column_width=True)
+    st.image("docs/images/fastapi.png", width=400)
     
     st.header("API docs")
     st.write("This API has 3 endpoints available.")
@@ -42,7 +42,7 @@ def app_page(state):
     st.title("Data App - [Streamlit](https://www.streamlit.io/)")
     st.write("We have a data app available for this project.")
     st.write("This was created with [Streamlit](https://www.streamlit.io/). The fastest way to build and share data apps.")
-    st.image("docs/images/streamlit.png", use_column_width=True)
+    st.image("docs/images/streamlit.png", width=400)
 
     st.subheader("How to see this Data App?")
     st.markdown("[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/dougtrajano/ds-zap-challenge/main/app.py)")
