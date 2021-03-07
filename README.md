@@ -58,16 +58,17 @@ More information in [docs/data_app.md](docs/data_app.md)
 
 The project was divided into 3 parts.
 
-### [ds_code/processing](ds_code/processing)
+### [Processing](ds_code/processing) - `ds_code/processing`
 - Download, extract and preprocess the datasets.
 - Provide scripts to be used for all steps.
 
-### [ds_code/exploring](ds_code/exploring)
-- Provides some analysis for training dataset.
+### [Exploratory Data Analysis (EDA)](app/eda.py) - `app/eda.py`
+- Data visualization for the training dataset
+> Available in the data app.
 
-### [ds_code/modeling](ds_code/modeling)
+### [Modeling](ds_code/modeling) - `ds_code/modeling`
 - Refining the dataset and training the model.
-- Experiments are tracked on [MLflow](mlflow.org).
+> Experiments are tracked on [MLflow](mlflow.org).
 
 We made a careful feature selection of the datasets (training and test). We include geographic data provided by IBGE Census 2010.
 
