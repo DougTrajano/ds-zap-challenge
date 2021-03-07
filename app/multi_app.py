@@ -49,16 +49,14 @@ class MultiApp:
             
         st.sidebar.title(title)
         app = st.sidebar.radio(
-            'Páginas',
+            'Pages',
             self.apps,
             format_func=lambda app: app['title'])
 
-        st.sidebar.subheader("Created by")
-        st.sidebar.write("[Douglas Trajano](https://dougtrajano.github.io/resume/)")
+        st.sidebar.write("**Created by**: [Douglas Trajano](https://dougtrajano.github.io/resume/)")
 
-        st.sidebar.subheader("Source code")
         st.sidebar.write(
-            "[DougTrajano/ds-zap-challenge](https://github.com/DougTrajano/ds-zap-challenge)")
+            "**Source code**: [ds-zap-challenge](https://github.com/DougTrajano/ds-zap-challenge)")
 
         if st.sidebar.button("Clear session"):
             state.clear()

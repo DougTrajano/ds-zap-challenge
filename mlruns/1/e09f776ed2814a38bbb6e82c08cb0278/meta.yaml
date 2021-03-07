@@ -1,0 +1,15 @@
+artifact_uri: file:///home/douglas-trajano/Documents/Doug/GitHub/ds-zap-challenge/mlruns/1/e09f776ed2814a38bbb6e82c08cb0278/artifacts
+end_time: 1614915271153
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: e09f776ed2814a38bbb6e82c08cb0278
+run_uuid: e09f776ed2814a38bbb6e82c08cb0278
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1614901267365
+status: 3
+tags: []
+user_id: douglas-trajano

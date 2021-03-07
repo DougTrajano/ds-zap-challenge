@@ -7,10 +7,11 @@ import os
 from shapely.geometry import Point
 from zipfile import ZipFile
 from tqdm import tqdm
+import boto3
 
 # Custom scripts
-from .censo_ibge import CensoData
-from .data_models import *
+from censo_ibge import CensoData
+from data_models import *
 
 def processing(raw, converted_features=None, ibge_paths=None, shapefile_path=None, censo_config=None):
     """
@@ -97,7 +98,6 @@ def extract_zip(file_path, to_path=None):
         else:
             # save on application folder
             zip.extractall()
-
 
 def download_url(url, file_name, to_path=None):
     """
@@ -232,67 +232,47 @@ class DescriptionFeatures:
         # remove newlines
         text = text.replace("\n", " ")
         
-        text = [ch.strip() for ch in text.split()]
+        text = [word.strip() for word in text.split()]
         
         return ' '.join(text)
     
     def get_features(self):
-        # gym
-        words = ["academia", "fitness", "gym", "bicicletario", "bike"]
-        self.features["has_gym"] = self._gen_feat_by_words(words)
-        
-        # garden
-        words = ["jardim", "jardinado"]
-        self.features["has_garden"] = self._gen_feat_by_words(words)
-        
-        # pool
-        words = ["piscina"]
-        self.features["has_pool"] = self._gen_feat_by_words(words)
 
-        # sauna
-        words = ["sauna"]
-        self.features["has_sauna"] = self._gen_feat_by_words(words)
+        features_map = {
+            "has_gym": ["academia", "fitness", "gym", "bicicletario", "bike", "bicicleta"],
+            "has_garden": ["jardim", "jardinado", "solarium"],
+            "has_pool": ["piscina"],
+            "has_sauna": ["sauna"],
+            "has_lobby": ["lobby", "lounge"],
+            "has_party_room": ["salao de festa", "espaco de festa", "clube"],
+            "has_balcony": ["varanda", "sacada"],
+            "has_playground": ["infantil", "playground", "brinquedoteca", "recreacao"],
+            "has_grill": ["churrasqueira", "grill", "forno"],
+            "has_games": ["jogo", "quadra", "pista", "futebol", "esporte", "poliesportiva"],
+            "has_closet": ["closet"],
+            "has_elevator": ["elevador"],
+            "has_furnitures": ["planejado", "decorado", "planejada"],
+            "has_toilet": ["lavabo"],
+            "has_massage_room": ["massagem"],
+            "has_washhouse": ["lavanderia"],
+            "has_terrace": ["terraco"],
+            "has_pilates": ["pilates", "spa", "hidro"],
+            "has_fancy_words": ["exclusivo", "refinado", "sofistica", "alto padrao", "privilegiada", "exclusividade", "altissimo", "requinte", "luxo", "luxuoso", "conforto", "nobre"],
+            "has_shield": ["blindad"],
+            "has_drivers_room": ["sala para motorista"],
+            "has_biometry": ["biometri"],
+            "has_fireplace": ["lareira"],
+            "has_deposit": ["deposito"],
+            "has_ceiling_height": ["pe direito"],
+            "has_generator": ["gerador"],
+            "has_pantry": ["despensa", "copa"],
+            "is_duplex": ["duplex"],
+            "is_triplex": ["triplex"]
+        }
 
-        # lobby
-        words = ["lobby", "lounge"]
-        self.features["has_lobby"] = self._gen_feat_by_words(words)
-        
-        # party room
-        words = ["salao de festa", "espaco de festa", "clube"]
-        self.features["has_partyRoom"] = self._gen_feat_by_words(words)
-        
-        # balcony
-        words = ["varanda", "sacada"]
-        self.features["has_balcony"] = self._gen_feat_by_words(words)
-        
-        # playground
-        words = ["infantil", "playground", "brinquedoteca", "recreacao"]
-        self.features["has_playground"] = self._gen_feat_by_words(words)
-        
-        # grill
-        words = ["churrasqueira", "grill"]
-        self.features["has_grill"] = self._gen_feat_by_words(words)
-        
-        # games
-        words = ["jogos", "quadra", "futebol", "esporte", "poliesportiva"]
-        self.features["has_games"] = self._gen_feat_by_words(words)
-        
-        # closet
-        words = ["closet"]
-        self.features["has_closet"] = self._gen_feat_by_words(words)
-        
-        # elevator
-        words = ["elevator"]
-        self.features["has_elevator"] = self._gen_feat_by_words(words)
+        for key, words in features_map.items():
+            self.features[key] = self._gen_feat_by_words(words)
 
-        # furnitures
-        words = ["planejado", "decorado"]
-        self.features["has_furnitures"] = self._gen_feat_by_words(words)
-
-        # toilet
-        words = ["lavabo"]
-        self.features["has_toilet"] = self._gen_feat_by_words(words)
-        
         return self.features
     
     def _gen_feat_by_words(self, words):

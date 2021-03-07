@@ -1,6 +1,6 @@
 {
     "mlflow": {
-        "uri": "file:///home/douglas-trajano/Documents/Doug/GitHub/ds-zap-challenge",
+        "uri": "file:///home/douglas-trajano/Documents/Doug/GitHub/ds-zap-challenge/mlruns/",
         "experiment": "ds-zap-challenge"
     },
     "fastapi": {
