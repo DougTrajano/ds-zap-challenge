@@ -44,8 +44,9 @@ def eda_custom_page(state):
 
     color = col1.selectbox('Color', [None]+cols)
     
-    min_price = df_train['price'].min()
-    max_price = df_train['price'].max()
+    min_price = int(df_train['price'].min())
+    max_price = int(df_train['price'].max())
+
     prices = col2.slider('Price range', min_value=min_price,
                          max_value=max_price,
                          value=(min_price, max_price))
