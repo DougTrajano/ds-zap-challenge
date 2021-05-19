@@ -1,7 +1,7 @@
 pandas==1.2.2
 numpy==1.20.1
 geopandas==0.8.2
-pydantic==1.8.1
+pydantic==1.8.2
 Unidecode==1.2.0
 streamlit==0.78.0
 plotly==4.14.3
