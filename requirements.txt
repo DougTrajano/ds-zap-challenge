@@ -13,7 +13,7 @@ Shapely==1.7.1
 mlflow==1.14.0
 xgboost==1.2.1
 tqdm==4.58.0
-fastapi==0.63.0
+fastapi==0.65.2
 scipy==1.5.3
 scikit_learn==0.23.2
 scikit_optimize==0.8.1
