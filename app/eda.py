@@ -7,7 +7,7 @@ def load_df(path):
     return pd.read_feather(path)
 
 def eda_pdreport_page(state):
-    from pandas_profiling import ProfileReport
+    from ydata_profiling import ProfileReport
     from streamlit_pandas_profiling import st_profile_report
 
     st.title(":bar_chart: EDA - Profile Report")
