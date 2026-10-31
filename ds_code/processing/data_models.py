@@ -3,18 +3,18 @@ from typing import Optional
 
 class Imovel(BaseModel):
     id: str = Field(..., alias='_id')
-    lat: Optional[float]
-    lon: Optional[float]
-    usable_areas: Optional[int]
-    parking_spaces: Optional[int]
-    suites: Optional[int]
-    bathrooms: Optional[int]
-    total_areas: Optional[int]
-    bedrooms: Optional[int]
-    geohash: Optional[str]
-    price: Optional[int]
-    yearly_iptu: Optional[int]
-    monthly_condo_fee: Optional[int]
+    lat: Optional[float] = None
+    lon: Optional[float] = None
+    usable_areas: Optional[int] = None
+    parking_spaces: Optional[int] = None
+    suites: Optional[int] = None
+    bathrooms: Optional[int] = None
+    total_areas: Optional[int] = None
+    bedrooms: Optional[int] = None
+    geohash: Optional[str] = None
+    price: Optional[int] = None
+    yearly_iptu: Optional[int] = None
+    monthly_condo_fee: Optional[int] = None
     has_gym: bool
     has_garden: bool
     has_pool: bool
@@ -43,25 +43,25 @@ class Imovel(BaseModel):
     has_pantry: bool
     is_duplex: bool
     is_triplex: bool
-    total_dom_part_improvisados: Optional[int]
-    renda_nom_dom_part: Optional[int]
-    renda_nom_dom_part_perm: Optional[int]
-    renda_nom_dom_part_imp: Optional[int]
-    renda_nom_dom_sal_baixo1: Optional[int]
-    renda_nom_dom_sal_baixo2: Optional[int]
-    renda_nom_dom_sal_baixo3: Optional[int]
-    renda_nom_dom_sal_baixo4: Optional[int]
-    renda_nom_dom_sal_medio1: Optional[int]
-    renda_nom_dom_sal_medio2: Optional[int]
-    renda_nom_dom_sal_medio3: Optional[int]
-    renda_nom_dom_sal_alto1: Optional[int]
-    renda_nom_dom_sal_alto2: Optional[int]
-    renda_nom_dom_sem_rendimento: Optional[int]
-    ident_logradouro_proprios: Optional[int]
-    nao_ident_logradouro_proprios: Optional[int]
-    ident_logradouro_alugados: Optional[int]
-    nao_ident_logradouro_alugados: Optional[int]
-    ilum_publica_proprios: Optional[int]
-    nao_ilum_publica_proprios: Optional[int]
-    ilum_publica_alugados: Optional[int]
-    nao_ilum_publica_alugados: Optional[int]
+    total_dom_part_improvisados: Optional[int] = None
+    renda_nom_dom_part: Optional[int] = None
+    renda_nom_dom_part_perm: Optional[int] = None
+    renda_nom_dom_part_imp: Optional[int] = None
+    renda_nom_dom_sal_baixo1: Optional[int] = None
+    renda_nom_dom_sal_baixo2: Optional[int] = None
+    renda_nom_dom_sal_baixo3: Optional[int] = None
+    renda_nom_dom_sal_baixo4: Optional[int] = None
+    renda_nom_dom_sal_medio1: Optional[int] = None
+    renda_nom_dom_sal_medio2: Optional[int] = None
+    renda_nom_dom_sal_medio3: Optional[int] = None
+    renda_nom_dom_sal_alto1: Optional[int] = None
+    renda_nom_dom_sal_alto2: Optional[int] = None
+    renda_nom_dom_sem_rendimento: Optional[int] = None
+    ident_logradouro_proprios: Optional[int] = None
+    nao_ident_logradouro_proprios: Optional[int] = None
+    ident_logradouro_alugados: Optional[int] = None
+    nao_ident_logradouro_alugados: Optional[int] = None
+    ilum_publica_proprios: Optional[int] = None
+    nao_ilum_publica_proprios: Optional[int] = None
+    ilum_publica_alugados: Optional[int] = None
+    nao_ilum_publica_alugados: Optional[int] = None
